@@ -2,6 +2,7 @@ import React from 'react'
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import AddGallery from '../components/AddGallery';
 
 
 const images = [
@@ -73,7 +74,11 @@ const Gallery = () => {
       >
         Click Me 💖
       </motion.button>
+
+       <AddGallery/>
     </div>
+
+   
 
   )
 }
