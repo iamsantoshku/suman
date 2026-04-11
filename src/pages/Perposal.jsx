@@ -1,7 +1,9 @@
 
 
+
 // import { useState } from "react";
 // import { motion } from "framer-motion";
+// import confetti from "canvas-confetti";
 
 // const santosh = "/images/her6.jpeg";
 // const muskanImg = "/images/her2.jpeg";
@@ -10,6 +12,59 @@
 //   const [accepted, setAccepted] = useState(false);
 //   const [position, setPosition] = useState({ x: 0, y: 0 });
 
+//   /* 🎆 FIREWORK FUNCTION */
+//   const fireExplosion = () => {
+
+//     // CENTER BLAST 💥
+//     confetti({
+//       particleCount: 200,
+//       spread: 120,
+//       startVelocity: 60,
+//       origin: { x: 0.5, y: 0.5 },
+//     });
+
+//     // LEFT SIDE 🎇
+//     confetti({
+//       particleCount: 100,
+//       angle: 60,
+//       spread: 80,
+//       origin: { x: 0, y: 0.5 },
+//     });
+
+//     // RIGHT SIDE 🎇
+//     confetti({
+//       particleCount: 100,
+//       angle: 120,
+//       spread: 80,
+//       origin: { x: 1, y: 0.5 },
+//     });
+
+//     // TOP BURST 🎆
+//     confetti({
+//       particleCount: 150,
+//       spread: 100,
+//       origin: { x: 0.5, y: 0 },
+//     });
+
+//     // MULTIPLE SMALL BURSTS 💫
+//     const duration = 2 * 1000;
+//     const end = Date.now() + duration;
+
+//     const interval = setInterval(() => {
+//       if (Date.now() > end) return clearInterval(interval);
+
+//       confetti({
+//         particleCount: 30,
+//         spread: 70,
+//         origin: {
+//           x: Math.random(),
+//           y: Math.random() - 0.2,
+//         },
+//       });
+//     }, 200);
+//   };
+
+//   /* 😅 MOVE NO BUTTON */
 //   const moveNoButton = () => {
 //     const isMobile = window.innerWidth < 768;
 
@@ -27,7 +82,7 @@
 //     setPosition({ x, y });
 //   };
 
-//   /* ✅ SUCCESS PAGE */
+//   /* 💍 SUCCESS PAGE */
 //   if (accepted) {
 //     return (
 //       <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-pink-500 to-red-500 text-white text-center p-6">
@@ -50,9 +105,9 @@
 //           />
 
 //           <motion.div
-//             animate={{ scale: [1, 1.3, 1] }}
-//             transition={{ repeat: Infinity, duration: 1.5 }}
-//             className="text-5xl"
+//             animate={{ scale: [1, 1.4, 1] }}
+//             transition={{ repeat: Infinity, duration: 1.2 }}
+//             className="text-6xl"
 //           >
 //             ❤️
 //           </motion.div>
@@ -75,7 +130,7 @@
 //     );
 //   }
 
-//   /* ✅ PROPOSAL PAGE */
+//   /* 💖 PROPOSAL PAGE */
 //   return (
 //     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-pink-400 to-pink-600 text-white text-center p-6 overflow-hidden">
 
@@ -98,7 +153,10 @@
 //         {/* YES BUTTON */}
 //         <motion.button
 //           whileHover={{ scale: 1.2 }}
-//           onClick={() => setAccepted(true)}
+//           onClick={() => {
+//             fireExplosion();  // 🎆 FIREWORK
+//             setAccepted(true);
+//           }}
 //           className="px-8 py-3 bg-red-500 rounded-full text-white text-lg shadow-lg"
 //         >
 //           YES ❤️
@@ -137,15 +195,22 @@ import confetti from "canvas-confetti";
 
 const santosh = "/images/her6.jpeg";
 const muskanImg = "/images/her2.jpeg";
+const music = "/music/mus1.mp3"; // 🎵 add your music file in public/music/
 
 const Perposal = () => {
   const [accepted, setAccepted] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
+  /* 🎵 PLAY MUSIC */
+  const playMusic = () => {
+    const audio = new Audio(music);
+    audio.volume = 1;
+    audio.play();
+  };
+
   /* 🎆 FIREWORK FUNCTION */
   const fireExplosion = () => {
 
-    // CENTER BLAST 💥
     confetti({
       particleCount: 200,
       spread: 120,
@@ -153,7 +218,6 @@ const Perposal = () => {
       origin: { x: 0.5, y: 0.5 },
     });
 
-    // LEFT SIDE 🎇
     confetti({
       particleCount: 100,
       angle: 60,
@@ -161,7 +225,6 @@ const Perposal = () => {
       origin: { x: 0, y: 0.5 },
     });
 
-    // RIGHT SIDE 🎇
     confetti({
       particleCount: 100,
       angle: 120,
@@ -169,14 +232,12 @@ const Perposal = () => {
       origin: { x: 1, y: 0.5 },
     });
 
-    // TOP BURST 🎆
     confetti({
       particleCount: 150,
       spread: 100,
       origin: { x: 0.5, y: 0 },
     });
 
-    // MULTIPLE SMALL BURSTS 💫
     const duration = 2 * 1000;
     const end = Date.now() + duration;
 
@@ -284,7 +345,8 @@ const Perposal = () => {
         <motion.button
           whileHover={{ scale: 1.2 }}
           onClick={() => {
-            fireExplosion();  // 🎆 FIREWORK
+            playMusic();     // 🎵 MUSIC ADDED
+            fireExplosion(); // 🎆 FIREWORK
             setAccepted(true);
           }}
           className="px-8 py-3 bg-red-500 rounded-full text-white text-lg shadow-lg"
