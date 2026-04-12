@@ -93,3 +93,7 @@ button:focus-visible {
     background-position: 2000px 0;
   }
 }
+
+/* body {
+  background: linear-gradient(to right, #ff758c, #ff7eb3);
+} */
