@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaInstagram, FaWhatsapp, FaPhoneAlt } from "react-icons/fa";
+import { FaInstagram, FaWhatsapp, FaPhoneAlt, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -70,6 +70,15 @@ const Footer = () => {
               <FaInstagram />
             </motion.a>
 
+             <motion.a
+              href="https://www.instagram.com/choaudharyanjay?igsh=OXg2eTF0MDNuNjB0"
+              target="_blank"
+              whileHover={{ scale: 1.2 }}
+              className="text-pink-500 hover:text-white"
+            >
+              <FaLinkedin/>
+            </motion.a>
+
             {/* WHATSAPP */}
             <motion.a
               href="https://wa.me/956778877"
@@ -79,6 +88,8 @@ const Footer = () => {
             >
               <FaWhatsapp />
             </motion.a>
+
+            
 
           </div>
 
