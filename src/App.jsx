@@ -60,30 +60,77 @@
 // }
 
 
-import React from 'react'
-import {  BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Home from './pages/Home'
-import Gallery from './pages/Gallery'
-import Story from './pages/Story'
-import Message from './pages/Message'
+// import React from 'react'
+// import {  BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+// import Home from './pages/Home'
+// import Gallery from './pages/Gallery'
+// import Story from './pages/Story'
+// import Message from './pages/Message'
 
-import Perposal from './pages/Perposal'
-import Navbar from './components/Navbar'
+// import Perposal from './pages/Perposal'
+// import Navbar from './components/Navbar'
+// import Footer from './components/Footer'
+// const App = () => {
+//   return (
+
+
+//     <Router>
+//       <Navbar />
+//       <Routes>
+//         <Route path='/' element={<Home />} />
+//         <Route path='/gallery' element={<Gallery />} />
+//         <Route path='/story' element={<Story />} />
+//         <Route path='/message' element={<Message />} />
+//         <Route path='/proposal' element={<Perposal />} />
+//       </Routes>
+//       <Footer/>
+//     </Router>
+//   )
+// }
+
+// export default App
+
+
+
+
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import Home from "./pages/Home";
+import Gallery from "./pages/Gallery";
+import Story from "./pages/Story";
+import Message from "./pages/Message";
+import Perposal from "./pages/Perposal";
+
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+
 const App = () => {
   return (
-
-
     <Router>
-      <Navbar />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/gallery' element={<Gallery />} />
-        <Route path='/story' element={<Story />} />
-        <Route path='/message' element={<Message />} />
-        <Route path='/proposal' element={<Perposal />} />
-      </Routes>
-    </Router>
-  )
-}
+      {/* 🔥 FULL PAGE FLEX */}
+      <div className="flex flex-col min-h-screen">
 
-export default App
+        {/* 🔝 NAVBAR */}
+        <Navbar />
+
+        {/* 📄 PAGE CONTENT */}
+        <div className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/story" element={<Story />} />
+            <Route path="/message" element={<Message />} />
+            <Route path="/proposal" element={<Perposal />} />
+          </Routes>
+        </div>
+
+        {/* 🔻 FOOTER (ALWAYS BOTTOM) */}
+        <Footer />
+
+      </div>
+    </Router>
+  );
+};
+
+export default App;

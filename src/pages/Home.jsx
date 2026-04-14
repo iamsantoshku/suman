@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import confetti from "canvas-confetti";
+import BeautifulGallery from "../components/BeautifulGallery";
 
 
 
@@ -30,7 +31,8 @@ const Home = () => {
 }, []);
 
   return (
-    <div className="min-h-screen relative overflow-hidden bg-black text-white">
+    <div>
+         <div className="min-h-screen relative overflow-hidden bg-black text-white">
 
       {/* Background */}
       <div className="absolute inset-0 bg-[url('/images/her8.jpeg')] bg-cover bg-center opacity-60"></div>
@@ -103,7 +105,14 @@ const Home = () => {
         ❤️
       </div>
 
+      
+
     </div>
+    <BeautifulGallery />
+
+    </div>
+   
+
   );
 };
 

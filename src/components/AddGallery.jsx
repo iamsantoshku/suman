@@ -270,7 +270,7 @@ const AddGallery = () => {
             </div>
 
             {/* MEDIA */}
-            <div
+            {/* <div
               className="relative bg-black flex justify-center items-center"
               onClick={() => handleDoubleTap(img)}
             >
@@ -287,7 +287,7 @@ const AddGallery = () => {
                 />
               )}
 
-              {/* ❤️ ANIMATION */}
+
               <motion.div
                 initial={{ scale: 0 }}
                 whileTap={{ scale: 1.5 }}
@@ -295,7 +295,34 @@ const AddGallery = () => {
               >
                 ❤️
               </motion.div>
-            </div>
+            </div> */}
+
+<div
+  className="relative w-full h-[650px] bg-black overflow-hidden"
+  onClick={() => handleDoubleTap(img)}
+>
+  {img.type === "video" ? (
+    <video
+      src={img.url}
+      controls
+      className="w-full h-full object-cover"
+    />
+  ) : (
+    <img
+      src={img.url}
+      className="w-full h-full object-cover"
+    />
+  )}
+
+  {/* ❤️ ANIMATION */}
+  <motion.div
+    initial={{ scale: 0 }}
+    whileTap={{ scale: 1.5 }}
+    className="absolute inset-0 flex justify-center items-center text-6xl opacity-0 active:opacity-100"
+  >
+    ❤️
+  </motion.div>
+</div>
 
             {/* ACTIONS */}
             <div className="p-3 flex justify-between items-center">
