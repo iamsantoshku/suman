@@ -108,7 +108,7 @@ const Home = () => {
       
 
     </div>
-    <BeautifulGallery />
+    <BeautifulGallery/>
 
     </div>
    
